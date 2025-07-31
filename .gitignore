@@ -1,0 +1,11 @@
+# Reference: https://github.com/github/gitignore/
+
+# Ignore build outputs from performing a nix-build or `nix build` command.
+result
+result-*
+
+# Ignore automatically generated direnv output.
+.direnv
+
+# Ignore automatically generated git-hooks.nix output.
+/.pre-commit-config.yaml

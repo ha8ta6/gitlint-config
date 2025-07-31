@@ -1,0 +1,44 @@
+name: "✨ Request"
+description: "Send a request"
+labels: ["about: request"]
+
+body:
+  - type: "markdown"
+    attributes:
+      value: |
+        > [!IMPORTANT]
+        > - Please describe all sections, including the title, concisely and clearly
+        >
+        > - If you find it difficult to explain in words, please explain with pictures, diagrams, codes, etc
+        >
+        > - There is no need for prefix in the title (e.g., Bug:, Feature:) as we will categorize issues using labels
+
+  - type: "textarea"
+    id: "overview"
+    attributes:
+      label: "📖 Overview"
+      description: "Please explain what kind of request you would like to make."
+    validations:
+      required: true
+
+  - type: "textarea"
+    id: "reason"
+    attributes:
+      label: "🤔 Reason"
+      description: "Please explain why you sent that request."
+    validations:
+      required: true
+
+  - type: "textarea"
+    id: "additional-comments"
+    attributes:
+      label: "📌 Additional comments"
+      description: "If you have anything additional to convey, please write it here."
+      value: "None"
+    validations:
+      required: true
+
+  - type: "markdown"
+    attributes:
+      value: |
+        🥰 **Thank you for your cooperation in improving the repository! Great job!**

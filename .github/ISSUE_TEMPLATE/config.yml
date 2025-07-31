@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: "💬 Discussions"
+    about: "Please use GitHub Discussions for questions and discussions"
+    url: "https://github.com/ha8ta6/gitlint-config/discussions/"
