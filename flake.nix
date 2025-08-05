@@ -55,6 +55,7 @@
                 "ruff"
                 "mypy"
               ];
+              excludes = [ "^(?!.*\/tests\/).*" ];
             };
 
             nixfmt-tree = {
