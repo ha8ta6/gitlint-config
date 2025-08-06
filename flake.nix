@@ -23,7 +23,7 @@
 
             shellHook = ''
               ${config.pre-commit.installationScript}
-              ([ -f .venv/bin/activate ] || uv venv) && source .venv/bin/activate && uv sync
+              uv sync && source .venv/bin/activate
             '';
           };
 
