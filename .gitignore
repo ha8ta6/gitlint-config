@@ -9,3 +9,17 @@ result-*
 
 # Ignore automatically generated git-hooks.nix output.
 /.pre-commit-config.yaml
+
+# Ignore cache from Python byte-compiled output.
+__pycache__/
+
+# Ignore output from performing a `uv sync` command.
+*.egg-info/
+
+# Ignore automatically generated venv output.
+.venv
+
+# Ignore caches related to Python tooling.
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/

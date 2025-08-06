@@ -17,12 +17,47 @@
         }:
         {
           devShells.default = pkgs.mkShellNoCC {
+            packages = [
+              pkgs.python312Packages.uv
+            ];
+
             shellHook = ''
               ${config.pre-commit.installationScript}
+              uv sync && source .venv/bin/activate
             '';
           };
 
           pre-commit.settings.hooks = {
+            ruff-format = {
+              enable = true;
+              description = "Format the Python files.";
+            };
+
+            ruff = {
+              enable = true;
+              description = "Detects anti-patterns in Python files.";
+              after = [ "ruff-format" ];
+            };
+
+            mypy = {
+              enable = true;
+              description = "Checks static type consistency in Python files.";
+              after = [ "ruff-format" ];
+            };
+
+            pytest = {
+              enable = true;
+              name = "pytest";
+              description = "Run the created Python tests.";
+              entry = "${pkgs.python312Packages.pytest}/bin/pytest";
+              files = "\\.py$";
+              after = [
+                "ruff"
+                "mypy"
+              ];
+              excludes = [ "^(?!.*\/tests\/).*" ];
+            };
+
             nixfmt-tree = {
               enable = true;
               name = "nixfmt-tree";
