@@ -16,7 +16,7 @@ body:
   - type: "textarea"
     id: "overview"
     attributes:
-      label: "📖 Overview"
+      label: "🔍 Overview"
       description: "Please explain what kind of request you would like to make."
     validations:
       required: true
