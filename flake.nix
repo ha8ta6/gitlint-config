@@ -22,7 +22,10 @@
             ];
 
             shellHook = ''
+              # Sets up pre-commit hook.
               ${config.pre-commit.installationScript}
+
+              # Sync dependencies and activate the venv.
               uv sync && source .venv/bin/activate
             '';
           };
