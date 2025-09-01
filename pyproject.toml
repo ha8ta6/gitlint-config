@@ -17,21 +17,17 @@ docstring-code-format = true
 select = ["ALL"]
 ignore = [
   "COM812", # missing-trailing-comma
+  "D100",   # undocumented-public-module
+  "D104",   # undocumented-public-package
+  "E501",   # line-too-long
+  "F401",   # unused-import
   "T201",   # print
 ]
 pydocstyle.convention = "google"
-
-[tool.ruff.lint.per-file-ignores]
-"__init__.py" = [
-  "D100", # undocumented-public-module
-  "F401", # unused-import
-]
 
 [tool.mypy]
 python_version = "3.12"
 strict = true
 ignore_missing_imports = true
-
-[[tool.mypy.overrides]]
-module = "gitlint_config.tests.*"
 disallow_untyped_decorators = false
+disallow_subclassing_any = false
