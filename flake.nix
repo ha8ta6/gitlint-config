@@ -48,19 +48,6 @@
               after = [ "ruff-format" ];
             };
 
-            pytest = {
-              enable = true;
-              name = "pytest";
-              description = "Run the created Python tests.";
-              entry = "${pkgs.python312Packages.pytest}/bin/pytest";
-              files = "\\.py$";
-              after = [
-                "ruff"
-                "mypy"
-              ];
-              excludes = [ "^(?!.*\/tests\/).*" ];
-            };
-
             nixfmt-tree = {
               enable = true;
               name = "nixfmt-tree";
