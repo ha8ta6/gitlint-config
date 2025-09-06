@@ -21,6 +21,7 @@ ignore = [
   "D104",   # undocumented-public-package
   "E501",   # line-too-long
   "F401",   # unused-import
+  "INP001", # implicit-namespace-package
   "T201",   # print
 ]
 pydocstyle.convention = "google"
